@@ -1,0 +1,2 @@
+C:\Users\Technologist\Documents\GitHub\Adding-Database\Database Hangman\Database Hangman\bin\Debug\Database Hangman.exe.config
+C:\Users\Technologist\Documents\GitHub\Adding-Database\Database Hangman\Database Hangman\obj\Debug\Database Hangman.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\Users\Technologist\Documents\GitHub\Adding-Database\Database Dragon Number1\Database Dragon Number1\bin\Debug\Database Dragon Number1.exe.config
+C:\Users\Technologist\Documents\GitHub\Adding-Database\Database Dragon Number1\Database Dragon Number1\bin\Debug\Database Dragon Number1.exe
+C:\Users\Technologist\Documents\GitHub\Adding-Database\Database Dragon Number1\Database Dragon Number1\bin\Debug\Database Dragon Number1.pdb
+C:\Users\Technologist\Documents\GitHub\Adding-Database\Database Dragon Number1\Database Dragon Number1\obj\Debug\Database Dragon Number1.exe
+C:\Users\Technologist\Documents\GitHub\Adding-Database\Database Dragon Number1\Database Dragon Number1\obj\Debug\Database Dragon Number1.pdb
