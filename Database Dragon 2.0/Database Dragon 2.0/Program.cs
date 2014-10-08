@@ -31,5 +31,52 @@ namespace DragonCombatGame2._0
             //keep console open
             Console.ReadKey();
         }
+
+         static void AddHighScore(int playerScore)
+        {
+            Console.WriteLine("Your Name: ");
+            string playerName = Console.ReadLine();
+
+            //create a gateway to the database
+            MorganEntities db = new MorganEntities();
+            
+            //create a new highsccore object
+            HighScore newHighScore =  new HighScore();
+
+            newHighScore.DateCreated = DateTime.Now;
+            newHighScore.Game = "Dragon Combat 2.0";
+            newHighScore.Name = playerName;
+            newHighScore.Score = playerScore;
+
+            //add it to the database
+            db.HighScores.Add(newHighScore);
+
+            //save our changes
+            db.SaveChanges();
+        }
+
+        static void DisplayHighScores()
+    {
+        //clear the console
+        Console.Clear();
+        //write to the console
+        Console.WriteLine("Dragon Combat 2.0 High Score");
+        Console.WriteLine("-------------------------");
+
+        //create a new connection to the database
+        MorganEntities db = new MorganEntities();
+        
+        //get the high score list
+        List<HighScore> highScoreList = db.HighScores.Where(x => x.Game == "Dragon Combat 2.0").OrderByDescending(x => x.Score).Take(10).ToList();
+
+
+    foreach (var highScore in highScoreList)
+	{
+        Console.WriteLine("{0}. {1} - {2} on {3}", highScoreList .IndexOf(highScore) + 1, highScore.Name, highScore.Score);
+	}
+        
+    }
+    }
+}
     }
 }

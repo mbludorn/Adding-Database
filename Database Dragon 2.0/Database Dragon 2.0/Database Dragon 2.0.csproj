@@ -32,8 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,14 +48,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="database.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="HighScore.cs">
+      <DependentUpon>database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="database.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>database.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="database.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>database.edmx</DependentUpon>
+      <LastGenOutput>database.Context.cs</LastGenOutput>
+    </None>
+    <None Include="database.edmx.diagram">
+      <DependentUpon>database.edmx</DependentUpon>
+    </None>
+    <None Include="database.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>database.edmx</DependentUpon>
+      <LastGenOutput>database.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
