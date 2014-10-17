@@ -129,12 +129,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Author.cs">
-      <DependentUpon>BlogModels.tt</DependentUpon>
+      <DependentUpon>BlogModels2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BlogModels.Context.cs">
       <AutoGen>True</AutoGen>
@@ -151,17 +152,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BlogModels.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BlogModels2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlogModels2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BlogModels2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlogModels2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BlogModels2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlogModels2.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Comment.cs">
-      <DependentUpon>BlogModels.tt</DependentUpon>
+      <DependentUpon>BlogModels2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Post.cs">
-      <DependentUpon>BlogModels.tt</DependentUpon>
+      <DependentUpon>BlogModels2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\about me pictures.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -235,7 +252,25 @@
       <DependentUpon>BlogModels.edmx</DependentUpon>
       <LastGenOutput>BlogModels.cs</LastGenOutput>
     </Content>
+    <EntityDeploy Include="Models\BlogModels2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BlogModels2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BlogModels2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BlogModels2.edmx</DependentUpon>
+      <LastGenOutput>BlogModels2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BlogModels2.edmx.diagram">
+      <DependentUpon>BlogModels2.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\BlogModels2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BlogModels2.edmx</DependentUpon>
+      <LastGenOutput>BlogModels2.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\Main.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -269,6 +304,8 @@
     <Content Include="Views\Post\Delete.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

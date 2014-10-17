@@ -40,9 +40,10 @@ namespace MyBlogApplication.Controllers
             Membership.CreateUser(registration.Username, registration.Password);
             //create our author object
             Models.Author author = new Models.Author();
-            //author.Name = registration.Name;
+            author.Name = registration.Name;
             author.ImageURL = registration.ImageURL;
             author.Username = registration.Username;
+           
             //add the author to the database
             db.Authors.Add(author);
             db.SaveChanges();

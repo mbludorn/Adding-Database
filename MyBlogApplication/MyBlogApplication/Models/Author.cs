@@ -20,9 +20,9 @@ namespace MyBlogApplication.Models
         }
     
         public int AuthorID { get; set; }
-        public string Name { get; set; }
-        public string ImageURL { get; set; }
         public string Username { get; set; }
+        public string ImageURL { get; set; }
+        public string Name { get; set; }
     
         public virtual ICollection<Post> Posts { get; set; }
     }
